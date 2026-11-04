@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+# Python virtual environments
+.venv/
+.venv-win/
+venv/
+env/
+ENV/
+backend/.venv/
+backend/.venv-win/
+
+# Local environment files
+.env
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.DS_Store
+
+# 临时测试脚本（根据图片，你可能有这些临时文件，如果不需要上传可以取消下面注释）
+# tmp_api_smoke.py
+# tmp_api_seq.py
+
+# IDE
+.idea/
+.vscode/
+*.swp·
+
+# Runtime-generated ChromaDB and SQLite data
+backend/chroma_db/chroma.sqlite3
+backend/chroma_db/value_eval_main.db
+backend/chroma_db/backups/
+backend/chroma_db/*/
+!backend/chroma_db/sql/
+!backend/chroma_db/sql/*.sql
+
+# SQLite sidecar files
+*.sqlite3-shm
+*.sqlite3-wal
+*.db-shm
+*.db-wal
+
+# Local runtime test data
+backend/runtime_data/
+backend/runtime_test/
