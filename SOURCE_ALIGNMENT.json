@@ -1,0 +1,184 @@
+{
+  "policy": "Unmodified Git blob bytes for existing non-README runtime files; original defects retained. Release-only docs/configuration/examples are listed separately.",
+  "project": "NGAI-LLMSafeContent/Project_1_Construction_of_Evaluation_System",
+  "schema": 1,
+  "source_commit": "fef7c8b5cac5fbeb48bd7d5874ba59c04a3b4942",
+  "source_files": {
+    ".gitignore": {
+      "git_blob": "bc8e75b13cb87c1f6519fa819febc134a1ce572c",
+      "mode": "100644"
+    },
+    "backend/.env.example": {
+      "git_blob": "f357342dedf135d07562c8f95edac151daac873d",
+      "mode": "100644"
+    },
+    "backend/agents/__init__.py": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    "backend/agents/dimension_extractor.py": {
+      "git_blob": "7c1218933d98ef9c85d3d0bcf11fddb1f50515f6",
+      "mode": "100644"
+    },
+    "backend/agents/indicator_generator.py": {
+      "git_blob": "5f1b040fbf759a910859fd18ee01def8133c526e",
+      "mode": "100644"
+    },
+    "backend/agents/orchestrator.py": {
+      "git_blob": "f9407e68eac3c98c43295ff0a7c2e8d1a7530535",
+      "mode": "100644"
+    },
+    "backend/agents/policy_retriever.py": {
+      "git_blob": "2248cd70f413a25391ce3cfabc5ad7b1b40f736b",
+      "mode": "100644"
+    },
+    "backend/api/routes_agents.py": {
+      "git_blob": "035895a916f663a239a91c00191e0bc642af71e5",
+      "mode": "100644"
+    },
+    "backend/api/routes_cases.py": {
+      "git_blob": "a2879e8a5bc07c7a29f5c19879ec150435be77e7",
+      "mode": "100644"
+    },
+    "backend/api/routes_indicators.py": {
+      "git_blob": "b150545ad75085bfac31aae9c0b553e797fd892d",
+      "mode": "100644"
+    },
+    "backend/api/routes_policy_documents.py": {
+      "git_blob": "ef229d7f7a989fb3b4fe479f9ca1f863a2ec6593",
+      "mode": "100644"
+    },
+    "backend/main.py": {
+      "git_blob": "9d2b069f030502ccf3d416b6e3e4cd8fa32af4bb",
+      "mode": "100644"
+    },
+    "backend/models/schemas.py": {
+      "git_blob": "188002e3b2d38f018b14345d4e5bedc42b4c9c28",
+      "mode": "100644"
+    },
+    "backend/modules/evolution_module.py": {
+      "git_blob": "8fc5c57bf0caddc06eb8ed4c406e9c376ecbaccf",
+      "mode": "100644"
+    },
+    "backend/modules/policy_document_service.py": {
+      "git_blob": "eff89afd4774d739aa42f56509573dd2e46f9ec5",
+      "mode": "100644"
+    },
+    "backend/modules/review_module.py": {
+      "git_blob": "eb41a339f303dc704f5fda12119403df8274e259",
+      "mode": "100644"
+    },
+    "backend/ontology/__init__.py": {
+      "git_blob": "8c4144c274731f3a073cde3ff1645350c6af46ee",
+      "mode": "100644"
+    },
+    "backend/ontology/new_indicator_taxonomy.py": {
+      "git_blob": "0c4e28fceda77860d8db924f46d7c4de16f6e1c1",
+      "mode": "100644"
+    },
+    "backend/requirements.txt": {
+      "git_blob": "8ed91abefd44849bca24df68d666bfd98c66ea93",
+      "mode": "100644"
+    },
+    "backend/runtime_config.py": {
+      "git_blob": "3afad92da99b19a0fdff566d83d1895e5b84a4d7",
+      "mode": "100644"
+    },
+    "backend/scripts/fix_scientific_truthfulness_level.py": {
+      "git_blob": "e7b21f238ba827bcddfbb05dad5b5260a98668ad",
+      "mode": "100644"
+    },
+    "backend/scripts/reset_to_new_taxonomy.py": {
+      "git_blob": "356f5cc1df5f8a5974179c88da8b08883f355463",
+      "mode": "100644"
+    },
+    "backend/scripts/sync_indicator_taxonomy.py": {
+      "git_blob": "44ce9bd4ed2aab3d7ef8df2fb09d4c107a57e2df",
+      "mode": "100644"
+    },
+    "backend/tests/test_runtime_config.py": {
+      "git_blob": "42ff8ffafc229a9a700f6e2fae0477f8ef5de663",
+      "mode": "100644"
+    },
+    "backend/utils/llm_client.py": {
+      "git_blob": "bd90d6f25dd95b9918809361414cb1944a85a262",
+      "mode": "100644"
+    },
+    "backend/utils/vector_store.py": {
+      "git_blob": "5093b7ef35051afd8019ea676c5ec0458d17d101",
+      "mode": "100644"
+    },
+    "framework_now.json": {
+      "git_blob": "c83210b6e718f83ecb2855726e5e2bfc94304b16",
+      "mode": "100644"
+    },
+    "frontend/index.html": {
+      "git_blob": "182064ac30016f43c2fd66c236ee6adf804b7d0b",
+      "mode": "100644"
+    },
+    "frontend/package-lock.json": {
+      "git_blob": "966d162a64f73199b6c8cc1954204d7bf3e97348",
+      "mode": "100644"
+    },
+    "frontend/package.json": {
+      "git_blob": "b6345c257abf513cb39e323065026b2c99c87e13",
+      "mode": "100644"
+    },
+    "frontend/src/App.jsx": {
+      "git_blob": "c167ea3395de9a1f2ad512ff4d956db23c6e0e77",
+      "mode": "100644"
+    },
+    "frontend/src/components/AgentDashboard.jsx": {
+      "git_blob": "4407e648b0d0481accfc60d53082250725271544",
+      "mode": "100644"
+    },
+    "frontend/src/components/CaseLibrary.jsx": {
+      "git_blob": "c9606c9d33e86d27875288bc715281954fe0f421",
+      "mode": "100644"
+    },
+    "frontend/src/components/EvalDataDemo.jsx": {
+      "git_blob": "04f42edb23634c41a7a3db0467b4a506e1433525",
+      "mode": "100644"
+    },
+    "frontend/src/components/IndicatorDetail.jsx": {
+      "git_blob": "aea46a56ce4abbcdca9072a7621f1f73de79b24e",
+      "mode": "100644"
+    },
+    "frontend/src/components/IndicatorTree.jsx": {
+      "git_blob": "5b76ea1cf3909402d23153b5890ce726c18a1bf9",
+      "mode": "100644"
+    },
+    "frontend/src/components/RelationGraph.jsx": {
+      "git_blob": "b0697d1f06e9a30f1d2cba835d427042d33e139c",
+      "mode": "100644"
+    },
+    "frontend/src/components/ReviewPanel.jsx": {
+      "git_blob": "35c73f963f2f1db0c3999efe4f1f936c90325b3a",
+      "mode": "100644"
+    },
+    "frontend/src/config/runtime.js": {
+      "git_blob": "880e281d586042d569660874d16210209f987942",
+      "mode": "100644"
+    },
+    "frontend/src/config/runtime.test.js": {
+      "git_blob": "563055c95fd607c6674cea473857c9f68cca04e9",
+      "mode": "100644"
+    },
+    "frontend/src/main.jsx": {
+      "git_blob": "24eb8153c7605fcb72b90ca967710322eb742fd0",
+      "mode": "100644"
+    },
+    "frontend/src/services/api.js": {
+      "git_blob": "324e3aebf909c54f1648b62550997eb11379d249",
+      "mode": "100644"
+    },
+    "frontend/src/styles/index.css": {
+      "git_blob": "075f45830800995d28f7a11c0133523ac85e3866",
+      "mode": "100644"
+    },
+    "frontend/vite.config.js": {
+      "git_blob": "ad3d0dad2f7113ae631ad9a6bf2b6c81f607db34",
+      "mode": "100644"
+    }
+  }
+}

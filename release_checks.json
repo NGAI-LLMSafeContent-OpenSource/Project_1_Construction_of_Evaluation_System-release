@@ -1,0 +1,80 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "backend",
+      "name": "backend-config-tests"
+    },
+    {
+      "argv": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "frontend",
+      "name": "frontend-install",
+      "timeout": 360
+    },
+    {
+      "argv": [
+        "npm",
+        "test",
+        "--",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "cwd": "frontend",
+      "name": "frontend-tests"
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "frontend",
+      "name": "frontend-build"
+    }
+  ],
+  "scope": "Pinned source byte/mode integrity, declared CPU/HTTP/frontend checks. Full model/GPU/data-dependent functionality is not implied. Upstream failures are preserved and separately documented.",
+  "servers": [
+    {
+      "argv": [
+        "{python}",
+        "-m",
+        "uvicorn",
+        "main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "{port}"
+      ],
+      "checks": [
+        {
+          "path": "/health"
+        },
+        {
+          "path": "/api/indicators/framework"
+        }
+      ],
+      "cwd": "backend",
+      "env": {
+        "ANONYMIZED_TELEMETRY": "False",
+        "CHROMA_PERSIST_DIR": "{temp}/chroma",
+        "DATABASE_URL": "sqlite+aiosqlite:///{temp}/runtime.db",
+        "POLICY_CRAWL_ENABLED": "false"
+      },
+      "name": "backend-http",
+      "ready": "/health"
+    }
+  ]
+}

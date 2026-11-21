@@ -33,6 +33,7 @@ class RuntimeConfigTests(unittest.TestCase):
 
     def test_uses_default_cors_origins_in_standalone_mode(self):
         self.assertIn('http://127.0.0.1:3000', get_cors_allow_origins({}))
+        self.assertIn('http://10.70.200.48:3000', get_cors_allow_origins({}))
 
     def test_uses_default_cors_origins_in_integration_mode(self):
         origins = get_cors_allow_origins({'APP_RUNTIME_MODE': 'integration'})

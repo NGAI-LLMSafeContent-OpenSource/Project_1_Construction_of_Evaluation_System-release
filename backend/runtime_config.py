@@ -45,6 +45,7 @@ def get_default_cors_origins(mode):
     return [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "http://10.70.200.48:3000",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://0.0.0.0:5173",

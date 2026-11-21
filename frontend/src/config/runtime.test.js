@@ -45,9 +45,9 @@ describe('runtime config', () => {
       buildWebSocketUrl({
         mode: 'standalone',
         protocol: 'http:',
-        host: '127.0.0.2:3000',
+        host: '10.70.200.48:3000',
       }),
-    ).toBe('ws://127.0.0.2:3000/ws/api/agents/ws')
+    ).toBe('ws://10.70.200.48:3000/ws/api/agents/ws')
   })
 
   it('uses standalone ports by default', () => {

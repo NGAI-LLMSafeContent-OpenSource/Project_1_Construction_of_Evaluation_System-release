@@ -2,8 +2,9 @@
   "checks": {
     "commands": [
       [
-        "python3",
-        "tools/release_smoke.py"
+        "/data/fzk/env/published-runtime-audit/Project_1_Construction_of_Evaluation_System/bin/python",
+        "-B",
+        "tools/release_check.py"
       ]
     ],
     "passed": true
@@ -13,21 +14,33 @@
       "mode": "100644",
       "sha256": "6d65226d83ef297ec2dd0be2ec006c13a34036c3774a2d2b935309acbeb72de5"
     },
+    "KNOWN_ISSUES.md": {
+      "mode": "100644",
+      "sha256": "c930993abbde2843e7e41d3e00346d456f07ceca219e6af086aa41a9192a2501"
+    },
     "LICENSE": {
       "mode": "100644",
       "sha256": "bf09923210a8186467c43b56946a7726e95850c172077106038be441a40c5776"
     },
     "README.md": {
       "mode": "100644",
-      "sha256": "f452d7472f58da9e8ebbef389d2a5506cf57fd617cb474397b49698832667d93"
+      "sha256": "34ecce1a0d833385ae9c31c0418b41496760e694033cef2f39c1c95edff189bd"
+    },
+    "RELEASE_FILES.md": {
+      "mode": "100644",
+      "sha256": "c83a23384a6fd13b9375bba9ff313883006c5f23d563fb666d7309baf15dd174"
+    },
+    "SOURCE_ALIGNMENT.json": {
+      "mode": "100644",
+      "sha256": "f87d267ae7c2350535dfe8e81d4a16542734064e0af8ce6f69ecfd7e96be61d6"
     },
     "THIRD_PARTY_NOTICES.md": {
       "mode": "100644",
-      "sha256": "ad3616ee5627467052e3aaa05c4aa85370d2821d171c323395e69ef0066a6515"
+      "sha256": "f4187dcd00bbc17813d0a95540902c59183c47bc6c94a6f7019052f316f49bb7"
     },
     "backend/.env.example": {
       "mode": "100644",
-      "sha256": "37d4b6f3d3dcf4284b54c8d3e0e85b36029615a623dd6518d3efa709df26111e"
+      "sha256": "fa9334b6bcb9de9492fab99d961edef1482b7291f8209b6a1256d50d51f42036"
     },
     "backend/agents/__init__.py": {
       "mode": "100644",
@@ -95,15 +108,27 @@
     },
     "backend/requirements.txt": {
       "mode": "100644",
-      "sha256": "7b7753cad6b1691b20c95e1c5c47a5e9357921bdaaaeb98e311d8db3d3a88824"
+      "sha256": "c668c3bdc8d4af5a3eeebd7bc317691822c655ffde7fbe43f3daf283ef9e75d0"
     },
     "backend/runtime_config.py": {
       "mode": "100644",
-      "sha256": "504b0fd377d069d1da80240145f3a4128658975f243685f58058b10a55bd150e"
+      "sha256": "36a436afdf2a61a44552acb9382c25bfd1025dc721956521df86fe1489d104fb"
+    },
+    "backend/scripts/fix_scientific_truthfulness_level.py": {
+      "mode": "100644",
+      "sha256": "d1340a9a30e7b6f3482d0a2fea517f66c768b9681dbd72bd66c1a598ff9bc756"
+    },
+    "backend/scripts/reset_to_new_taxonomy.py": {
+      "mode": "100644",
+      "sha256": "954bb351fa3f1f29cfe21045c639644c7397204ac66c17de0f90392a84bde720"
+    },
+    "backend/scripts/sync_indicator_taxonomy.py": {
+      "mode": "100644",
+      "sha256": "0dec6f348fde4e3d2958dd8529a7707e535a99ec35731711bc9266da27cb0566"
     },
     "backend/tests/test_runtime_config.py": {
       "mode": "100644",
-      "sha256": "c4d7b63a1695e7d3c6e467e8da3b58247705cd76cb5749873e11c06958ef1d31"
+      "sha256": "2aae46a3edbc9a3e94358b218580893e7169a6060278c6e19c7026314edee032"
     },
     "backend/utils/llm_client.py": {
       "mode": "100644",
@@ -127,7 +152,7 @@
     },
     "frontend/package.json": {
       "mode": "100644",
-      "sha256": "07cf532fe4ff1170a0ace318fcd35f87990dbd06f63777557bc6e46794a38dad"
+      "sha256": "78620c8f070d0f04e3644a7152e71d26a6b88b535b37ff5a0cd62ad08e500d71"
     },
     "frontend/src/App.jsx": {
       "mode": "100644",
@@ -167,7 +192,7 @@
     },
     "frontend/src/config/runtime.test.js": {
       "mode": "100644",
-      "sha256": "3036d437be0392bf51915e8461e18bfbd45db03c8c18c7dfbf9dcebb8d87f4d1"
+      "sha256": "825051c89181b1f90a99dc234929c4119eef8e17f8f50c94c512ce8620c2d0d9"
     },
     "frontend/src/main.jsx": {
       "mode": "100644",
@@ -185,17 +210,17 @@
       "mode": "100644",
       "sha256": "c71b4b12a1c4197f4e9ee4366e8c2fc6e496586e68450411e9cf71e5297a91b4"
     },
-    "tools/release_smoke.json": {
+    "release_checks.json": {
       "mode": "100644",
-      "sha256": "eb09c8a6b33070f196f8fa12e7e89784191de1b5b43ad56d198ec850e885cee3"
+      "sha256": "de5cf70c5fb6dceb3cca524b9a47267bf722d33342b60178306761e6dad501e8"
     },
-    "tools/release_smoke.py": {
+    "tools/release_check.py": {
       "mode": "100644",
-      "sha256": "faae08ff6ae764448a8ac6568041404e269775d58e4d37325a4f83ba62027392"
+      "sha256": "6b370aab6b096a1df48e44995198d6d46c0e54ac5f7cf371a327b8670264f5f0"
     }
   },
   "project": "NGAI-LLMSafeContent/Project_1_Construction_of_Evaluation_System",
   "schema": 1,
   "source_commit": "fef7c8b5cac5fbeb48bd7d5874ba59c04a3b4942",
-  "whitelist_sha256": "f4e5080b824d18884f3bc09fc5cd6ca379a01bae18157af9c15c9d2a37a45171"
+  "whitelist_sha256": "b14ee5c8e4d7b0a677d287cc4f84fd6646ae834eb1a86f0798a0a635026a2b2e"
 }

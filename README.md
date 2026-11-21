@@ -1,27 +1,74 @@
 # 评估指标体系构建工具
 
-发布方 NGAI-LLMSafeContent；版本 1.0；日期 2026-11-04；Apache-2.0。
-源仓库 NGAI-LLMSafeContent/Project_1_Construction_of_Evaluation_System，固定提交 fef7c8b5cac5fbeb48bd7d5874ba59c04a3b4942。
+从政策文本、文件和网页中挖掘评估维度与候选指标，通过人工审核形成可管理的指标体系。
 
-公开 backend、frontend 以及确认单允许的初始 framework_now.json。没有开发 SQLite、Chroma 索引、缓存、抓取正文或运行日志。
+发布单位：NGAI-LLMSafeContent。发布分支：`release/1.0`；更新日期：2026-11-21；自研代码许可：Apache-2.0，第三方保留原许可。
 
-## 前置条件与安装
+## 功能
 
-Python 3.11（命令名 python3.11，应加入 PATH）、pip >=22.3、Node.js >=18、npm；需要联网下载 PyPI/npm 依赖。建议新建 Python venv，从根目录执行：
+- 多智能体文档检索、维度抽取与指标生成
+- 指标审核、增删改查、批量导入、案例管理及关联图谱
+- React前端、FastAPI后端、SQLite与Chroma持久化；支持standalone和integration模式
 
-```sh
-python3.11 -m pip install -r backend/requirements.txt
-cd frontend
-npm ci --ignore-scripts --no-audit
-npm run build
+## 安装与快速开始
+
+Python 3.11、Node.js ≥18、npm；模型挖掘另需兼容的Ollama、OpenAI或DeepSeek服务。
+
+从公开仓下载同一发布分支：
+
+```bash
+git clone --branch release/1.0 https://github.com/NGAI-LLMSafeContent-OpenSource/Project_1_Construction_of_Evaluation_System-release.git
+cd Project_1_Construction_of_Evaluation_System-release
+python -m venv .venv
+# Linux/macOS
+source .venv/bin/activate
+# Windows PowerShell改用 .venv\Scripts\Activate.ps1
 ```
 
-复制 backend/.env.example 为自己的 backend/.env，配置 DATABASE_URL、CHROMA_PERSIST_DIR 和所选模型服务。首次启动使用全新可写目录；不得复制开发数据库。定时政策抓取默认关闭，使用者自行确认抓取范围和使用权限后才开启。LLM 服务需使用者自备 API 地址、模型与凭据；凭据不提交版本库。
+以下命令均以仓库根目录为起点，注释中的外部条件需先准备：
 
-从 backend/ 运行 `python main.py`（默认端口 8000）；从 frontend/ 运行 `npm run dev -- --host 127.0.0.1`（默认端口 5173）。GET /health 验证健康，GET /api/indicators/framework 获取初始指标。
+```bash
+python -m pip install -r backend/requirements.txt
+cp backend/.env.example backend/.env
+# 编辑 backend/.env，设置自己的数据库目录、Chroma目录和模型服务
+(cd frontend && npm ci && npm run build)
+(cd backend && python main.py)
+# 另一个终端
+(cd frontend && npm run dev -- --host 127.0.0.1)
+```
 
-## 自动验证
+## 使用与输出
 
-根目录 `python tools/release_smoke.py`：隔离安装依赖、运行现有配置测试、前端测试和生产构建，使用全新临时数据库/索引启动后端并验证健康、空库查询和初始指标，再启动生产静态页面 HTTP 检查。没有调用外部 LLM、下载嵌入模型或执行网页抓取；指标自动生成、向量嵌入与语义检索仍需真实模型验证。
+打开前端页面（通常为5173端口），上传资料或粘贴政策文本，选择挖掘层级并启动任务。审阅候选指标后采纳或修改，通过指标树、案例库和图谱查看结果。后端默认8000端口，可用 `/health` 检查。
 
-完整发布文件和校验见 RELEASE_MANIFEST.json、SHA256SUMS，第三方条件见 THIRD_PARTY_NOTICES.md。
+## 配置与外部依赖
+
+首次启动使用新建的可写数据库和向量库。模型凭据通过本地.env提供；嵌入模型、外部网页抓取与真实挖掘结果需使用者另行准备和核验。
+
+真实凭据只在自己的运行环境或平台Secrets中配置，不提交.env、用户上传、模型权重或运行结果。原仓文件中的内网服务地址经发布负责人确认按原样保留，使用者应在本地配置自己的可达服务。
+
+## 验证与已知问题
+
+完成对应依赖准备后运行：
+
+```bash
+python tools/release_check.py
+```
+
+检查包含发布文件完整性、原仓文件一致性与声明的最小测试。它不会自动下载模型或申请API，也不代表全部真实业务/准确率验收。保留的原仓错误、未运行项及外部依赖见 [KNOWN_ISSUES.md](KNOWN_ISSUES.md)。
+
+## 发布版本与文件清单
+
+本版本以原开发仓主分支提交 `fef7c8b5cac5fbeb48bd7d5874ba59c04a3b4942` 为源。功能实现与对应原文件保持一致；README、许可说明和发布辅助材料单独登记。当前功能的必要源码、配置、界面与运行资源保留，明确弃用的原型、历史结果和开发缓存不捆绑。
+
+- [逐文件发布清单](RELEASE_FILES.md)
+- [原仓文件与Git对象对应关系](SOURCE_ALIGNMENT.json)
+- [完整文件SHA-256及权限](RELEASE_MANIFEST.json)，校验表为SHA256SUMS
+
+校验值按Git存储字节生成；若原.gitattributes规定检出换行转换，请用Git对象或发布检查脚本校验，避免将LF/CRLF误认为源码变化。各公开平台release/1.0使用同一个提交，平台生成的运行分支不属于此发布清单。
+
+## 反馈、贡献与许可证
+
+请通过 [公开仓Issues](https://github.com/NGAI-LLMSafeContent-OpenSource/Project_1_Construction_of_Evaluation_System-release/issues) 提交复现步骤、环境和日志摘要，勿附真实凭据或用户数据。代码问题由课题维护者在原开发仓处理，发布负责人同步审核后的版本；不要仅修一个平台造成分歧。
+
+自研代码采用[Apache-2.0](LICENSE)。模型、数据集、外部服务和第三方代码遵循各自许可与使用条件，见[第三方说明](THIRD_PARTY_NOTICES.md)。
